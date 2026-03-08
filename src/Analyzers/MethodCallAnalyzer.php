@@ -1,16 +1,16 @@
 <?php
 
-namespace Ikabalzam\LaravelVision\Analyzers;
+namespace Ikabalzam\LaravelXray\Analyzers;
 
-use Ikabalzam\LaravelVision\Constants;
-use Ikabalzam\LaravelVision\Resolvers\TableResolver;
-use Ikabalzam\LaravelVision\Support\AstHelpers;
-use Ikabalzam\LaravelVision\Support\AuditResult;
-use Ikabalzam\LaravelVision\Support\CollectionDetector;
-use Ikabalzam\LaravelVision\Support\ColumnExtractor;
-use Ikabalzam\LaravelVision\Support\ColumnValidator;
-use Ikabalzam\LaravelVision\Support\ResolutionResult;
-use Ikabalzam\LaravelVision\Support\SchemaRegistry;
+use Ikabalzam\LaravelXray\Constants;
+use Ikabalzam\LaravelXray\Resolvers\TableResolver;
+use Ikabalzam\LaravelXray\Support\AstHelpers;
+use Ikabalzam\LaravelXray\Support\AuditResult;
+use Ikabalzam\LaravelXray\Support\CollectionDetector;
+use Ikabalzam\LaravelXray\Support\ColumnExtractor;
+use Ikabalzam\LaravelXray\Support\ColumnValidator;
+use Ikabalzam\LaravelXray\Support\ResolutionResult;
+use Ikabalzam\LaravelXray\Support\SchemaRegistry;
 use PhpParser\Node;
 
 /**

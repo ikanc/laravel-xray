@@ -1,9 +1,9 @@
 <?php
 
-namespace Ikabalzam\LaravelVision;
+namespace Ikabalzam\LaravelXray;
 
 /**
- * Central registry of method name constants used throughout the Vision engine.
+ * Central registry of method name constants used throughout the Xray engine.
  *
  * These lists define how the auditor classifies method calls:
  * - Which methods accept column name arguments (and thus need validation)
@@ -228,20 +228,20 @@ final class Constants
     /**
      * Merge user-configured extras with the built-in constants.
      *
-     * Called during initialization to incorporate config('vision.*') values.
+     * Called during initialization to incorporate config('xray.*') values.
      */
     public static function nonRelationMethods(): array
     {
-        return array_merge(self::NON_RELATION_METHODS, config('vision.non_relation_methods', []));
+        return array_merge(self::NON_RELATION_METHODS, config('xray.non_relation_methods', []));
     }
 
     public static function collectionOnlyMethods(): array
     {
-        return array_merge(self::COLLECTION_ONLY_METHODS, config('vision.collection_only_methods', []));
+        return array_merge(self::COLLECTION_ONLY_METHODS, config('xray.collection_only_methods', []));
     }
 
     public static function ignoredColumnPatterns(): array
     {
-        return array_merge(self::IGNORED_COLUMN_PATTERNS, config('vision.ignored_column_patterns', []));
+        return array_merge(self::IGNORED_COLUMN_PATTERNS, config('xray.ignored_column_patterns', []));
     }
 }

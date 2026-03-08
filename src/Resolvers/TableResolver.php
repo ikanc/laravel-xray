@@ -1,10 +1,10 @@
 <?php
 
-namespace Ikabalzam\LaravelVision\Resolvers;
+namespace Ikabalzam\LaravelXray\Resolvers;
 
-use Ikabalzam\LaravelVision\Support\AstHelpers;
-use Ikabalzam\LaravelVision\Support\CollectionDetector;
-use Ikabalzam\LaravelVision\Support\ResolutionResult;
+use Ikabalzam\LaravelXray\Support\AstHelpers;
+use Ikabalzam\LaravelXray\Support\CollectionDetector;
+use Ikabalzam\LaravelXray\Support\ResolutionResult;
 use PhpParser\Node;
 
 /**

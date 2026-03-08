@@ -1,6 +1,6 @@
 <?php
 
-namespace Ikabalzam\LaravelVision\Support;
+namespace Ikabalzam\LaravelXray\Support;
 
 use PhpParser\Node;
 use PhpParser\NodeTraverser;

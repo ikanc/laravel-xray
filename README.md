@@ -1,8 +1,8 @@
-# Laravel Vision
+# Laravel Xray
 
 **Static analysis for Eloquent column references.** Finds invalid database column names in your Laravel code before they hit production.
 
-Vision uses PHP-Parser to build an AST of your codebase, then traces every `->where('column')`, `->orderBy('column')`, `->pluck('column')` (and 30+ other methods) back to its database table and validates the column actually exists.
+Xray uses PHP-Parser to build an AST of your codebase, then traces every `->where('column')`, `->orderBy('column')`, `->pluck('column')` (and 30+ other methods) back to its database table and validates the column actually exists.
 
 ## The Problem
 
@@ -17,12 +17,12 @@ $query->orderBy('craeted_at');
 Invoice::where('total', '>', 1000); // was renamed to 'total_in_cents'
 ```
 
-These bugs survive code review, pass your test suite, and explode in production. Vision catches them statically — no HTTP requests, no test data, no runtime needed.
+These bugs survive code review, pass your test suite, and explode in production. Xray catches them statically — no HTTP requests, no test data, no runtime needed.
 
 ## Installation
 
 ```bash
-composer require ikabalzam/laravel-vision --dev
+composer require ikabalzam/laravel-xray --dev
 ```
 
 Laravel auto-discovers the service provider. No manual registration needed.
@@ -31,22 +31,22 @@ Laravel auto-discovers the service provider. No manual registration needed.
 
 ```bash
 # Full audit
-php artisan vision:audit
+php artisan xray:audit
 
 # Audit a specific table
-php artisan vision:audit --table=users
+php artisan xray:audit --table=users
 
 # Show suggested fixes for typos
-php artisan vision:audit --fix
+php artisan xray:audit --fix
 
 # JSON output (for CI pipelines)
-php artisan vision:audit --json
+php artisan xray:audit --json
 
 # Show unresolved references (dynamic class/table names)
-php artisan vision:audit --show-unresolved
+php artisan xray:audit --show-unresolved
 
 # Scan a specific directory
-php artisan vision:audit --path=app/Services
+php artisan xray:audit --path=app/Services
 ```
 
 ## What It Catches
@@ -58,7 +58,7 @@ php artisan vision:audit --path=app/Services
 
 ## What It Understands
 
-Vision isn't a dumb regex grep. It performs deep AST analysis:
+Xray isn't a dumb regex grep. It performs deep AST analysis:
 
 - **Method chains**: `User::where()->orderBy()->get()` — traces the chain back to `User`
 - **Relationships**: `$this->posts()->where('title', ...)` — resolves `posts()` to the `posts` table
@@ -95,11 +95,11 @@ public function legacyQuery() {
 ## Configuration
 
 ```bash
-php artisan vendor:publish --tag=vision-config
+php artisan vendor:publish --tag=xray-config
 ```
 
 ```php
-// config/vision.php
+// config/xray.php
 return [
     // Default scan path
     'path' => app_path(),
@@ -124,24 +124,24 @@ return [
 
 ## CI Integration
 
-Vision returns exit code 1 when issues are found, making it perfect for CI:
+Xray returns exit code 1 when issues are found, making it perfect for CI:
 
 ```yaml
 # GitHub Actions
 - name: Audit column references
-  run: php artisan vision:audit --json
+  run: php artisan xray:audit --json
 ```
 
 ```yaml
 # GitLab CI
-vision:
-  script: php artisan vision:audit
+xray:
+  script: php artisan xray:audit
   allow_failure: false
 ```
 
 ## How It Works
 
-Vision is built on [nikic/php-parser](https://github.com/nikic/PHP-Parser) and performs multi-pass analysis:
+Xray is built on [nikic/php-parser](https://github.com/nikic/PHP-Parser) and performs multi-pass analysis:
 
 1. **Schema loading** — Reads your live database schema (tables + columns) and scans `app/Models` to build a model-to-table map with relationship metadata
 2. **AST parsing** — Parses each PHP file into an Abstract Syntax Tree
@@ -158,7 +158,7 @@ Vision is built on [nikic/php-parser](https://github.com/nikic/PHP-Parser) and p
 
 - PHP 8.1+
 - Laravel 10, 11, or 12
-- A running database connection (Vision reads schema metadata via `Schema::getColumnListing()`)
+- A running database connection (Xray reads schema metadata via `Schema::getColumnListing()`)
 
 ## License
 

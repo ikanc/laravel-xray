@@ -1,10 +1,10 @@
 <?php
 
-namespace Ikabalzam\LaravelVision\Analyzers;
+namespace Ikabalzam\LaravelXray\Analyzers;
 
-use Ikabalzam\LaravelVision\Support\AstHelpers;
-use Ikabalzam\LaravelVision\Support\AuditResult;
-use Ikabalzam\LaravelVision\Support\SchemaRegistry;
+use Ikabalzam\LaravelXray\Support\AstHelpers;
+use Ikabalzam\LaravelXray\Support\AuditResult;
+use Ikabalzam\LaravelXray\Support\SchemaRegistry;
 use PhpParser\Node;
 use PhpParser\NodeFinder;
 use PhpParser\ParserFactory;

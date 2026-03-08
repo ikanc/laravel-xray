@@ -19,7 +19,7 @@ return [
     | Models Directory
     |--------------------------------------------------------------------------
     |
-    | Where your Eloquent models live. Vision scans this directory to build
+    | Where your Eloquent models live. Xray scans this directory to build
     | the model-to-table mapping and extract relationship definitions.
     |
     */
@@ -32,7 +32,7 @@ return [
     |--------------------------------------------------------------------------
     |
     | Regex patterns for column names that should never be flagged.
-    | Vision already ignores common patterns like *_count, *_sum, pivot_*, etc.
+    | Xray already ignores common patterns like *_count, *_sum, pivot_*, etc.
     | Add your own project-specific patterns here.
     |
     | Example: '/^cached_/' to ignore all cached_* virtual attributes.
@@ -49,7 +49,7 @@ return [
     |--------------------------------------------------------------------------
     |
     | Method names that should NOT be treated as potential relationship calls
-    | during chain walking. Vision already knows about all standard Laravel
+    | during chain walking. Xray already knows about all standard Laravel
     | query builder methods. Add your custom builder macros or scope-like
     | methods here to prevent false relationship resolution.
     |
@@ -68,7 +68,7 @@ return [
     |--------------------------------------------------------------------------
     |
     | Methods that exist ONLY on Illuminate\Support\Collection, never on
-    | Query\Builder. If any of these appear in a method chain, Vision will
+    | Query\Builder. If any of these appear in a method chain, Xray will
     | treat the entire chain as a Collection context and skip it.
     |
     | WARNING: Do NOT add methods that also exist on Builder — doing so will

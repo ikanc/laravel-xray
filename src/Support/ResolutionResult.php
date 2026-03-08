@@ -1,6 +1,6 @@
 <?php
 
-namespace Ikabalzam\LaravelVision\Support;
+namespace Ikabalzam\LaravelXray\Support;
 
 /**
  * Represents the outcome of a table resolution attempt.

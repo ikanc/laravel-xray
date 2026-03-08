@@ -1,8 +1,8 @@
 <?php
 
-namespace Ikabalzam\LaravelVision\Support;
+namespace Ikabalzam\LaravelXray\Support;
 
-use Ikabalzam\LaravelVision\Constants;
+use Ikabalzam\LaravelXray\Constants;
 use PhpParser\Node;
 use PhpParser\Node\Expr\FuncCall;
 use PhpParser\Node\Expr\MethodCall;

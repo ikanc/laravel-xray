@@ -1,6 +1,6 @@
 <?php
 
-namespace Ikabalzam\LaravelVision\Support;
+namespace Ikabalzam\LaravelXray\Support;
 
 /**
  * Data transfer object holding the complete results of a schema audit run.

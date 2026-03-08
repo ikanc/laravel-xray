@@ -1,15 +1,15 @@
 <?php
 
-namespace Ikabalzam\LaravelVision;
+namespace Ikabalzam\LaravelXray;
 
-use Ikabalzam\LaravelVision\Support\AuditResult;
+use Ikabalzam\LaravelXray\Support\AuditResult;
 use Illuminate\Console\Command;
 use Illuminate\Support\Str;
 
 /**
  * Artisan command for auditing database column references in PHP code.
  *
- * This is the CLI interface to the Vision engine. It handles:
+ * This is the CLI interface to the Xray engine. It handles:
  * - Command-line options and argument parsing
  * - Output formatting (human-readable and JSON)
  * - Exit codes (SUCCESS for clean audits, FAILURE for confirmed issues)
@@ -17,16 +17,16 @@ use Illuminate\Support\Str;
  * The actual analysis logic lives in SchemaAuditor and its component classes.
  *
  * Usage:
- *   php artisan vision:audit                          # Full audit
- *   php artisan vision:audit --table=users            # Audit only 'users' table
- *   php artisan vision:audit --fix                    # Show suggested column names
- *   php artisan vision:audit --json                   # Machine-readable output
- *   php artisan vision:audit --show-unresolved        # Show dynamic class/table refs
- *   php artisan vision:audit --show-skipped           # Show @audit-skip'd references
+ *   php artisan xray:audit                          # Full audit
+ *   php artisan xray:audit --table=users            # Audit only 'users' table
+ *   php artisan xray:audit --fix                    # Show suggested column names
+ *   php artisan xray:audit --json                   # Machine-readable output
+ *   php artisan xray:audit --show-unresolved        # Show dynamic class/table refs
+ *   php artisan xray:audit --show-skipped           # Show @audit-skip'd references
  */
-class VisionCommand extends Command
+class XrayCommand extends Command
 {
-    protected $signature = 'vision:audit
+    protected $signature = 'xray:audit
         {--path= : Path to scan (default: config value or app/)}
         {--table= : Only audit a specific table}
         {--model= : Only audit a specific model}
@@ -42,14 +42,14 @@ class VisionCommand extends Command
         $isJson = $this->option('json');
 
         if (! $isJson) {
-            $this->info('Laravel Vision — Column Reference Audit');
+            $this->info('Laravel Xray — Column Reference Audit');
             $this->info('=======================================');
             $this->newLine();
             $this->info('Loading database schema...');
         }
 
         $auditor = new SchemaAuditor;
-        $path = $this->option('path') ?: config('vision.path', base_path('app'));
+        $path = $this->option('path') ?: config('xray.path', base_path('app'));
         $tableFilter = $this->option('table');
         $modelFilter = $this->option('model');
 

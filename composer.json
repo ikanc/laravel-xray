@@ -1,8 +1,8 @@
 {
-    "name": "ikabalzam/laravel-vision",
+    "name": "ikabalzam/laravel-xray",
     "description": "Static analysis for Eloquent column references — finds invalid database column names in your Laravel code before they hit production.",
     "keywords": ["laravel", "eloquent", "static-analysis", "database", "schema", "audit", "columns", "lint"],
-    "homepage": "https://github.com/ikanc/laravel-vision",
+    "homepage": "https://github.com/ikanc/laravel-xray",
     "license": "MIT",
     "authors": [
         {
@@ -24,18 +24,18 @@
     },
     "autoload": {
         "psr-4": {
-            "Ikabalzam\\LaravelVision\\": "src/"
+            "Ikabalzam\\LaravelXray\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Ikabalzam\\LaravelVision\\Tests\\": "tests/"
+            "Ikabalzam\\LaravelXray\\Tests\\": "tests/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Ikabalzam\\LaravelVision\\VisionServiceProvider"
+                "Ikabalzam\\LaravelXray\\XrayServiceProvider"
             ]
         }
     },

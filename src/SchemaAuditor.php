@@ -1,19 +1,19 @@
 <?php
 
-namespace Ikabalzam\LaravelVision;
+namespace Ikabalzam\LaravelXray;
 
-use Ikabalzam\LaravelVision\Analyzers\FileAnalyzer;
-use Ikabalzam\LaravelVision\Analyzers\MethodCallAnalyzer;
-use Ikabalzam\LaravelVision\Analyzers\StaticCallAnalyzer;
-use Ikabalzam\LaravelVision\Resolvers\ChainResolver;
-use Ikabalzam\LaravelVision\Resolvers\ClosureResolver;
-use Ikabalzam\LaravelVision\Resolvers\TableResolver;
-use Ikabalzam\LaravelVision\Resolvers\VariableResolver;
-use Ikabalzam\LaravelVision\Support\AuditResult;
-use Ikabalzam\LaravelVision\Support\CollectionDetector;
-use Ikabalzam\LaravelVision\Support\ColumnExtractor;
-use Ikabalzam\LaravelVision\Support\ColumnValidator;
-use Ikabalzam\LaravelVision\Support\SchemaRegistry;
+use Ikabalzam\LaravelXray\Analyzers\FileAnalyzer;
+use Ikabalzam\LaravelXray\Analyzers\MethodCallAnalyzer;
+use Ikabalzam\LaravelXray\Analyzers\StaticCallAnalyzer;
+use Ikabalzam\LaravelXray\Resolvers\ChainResolver;
+use Ikabalzam\LaravelXray\Resolvers\ClosureResolver;
+use Ikabalzam\LaravelXray\Resolvers\TableResolver;
+use Ikabalzam\LaravelXray\Resolvers\VariableResolver;
+use Ikabalzam\LaravelXray\Support\AuditResult;
+use Ikabalzam\LaravelXray\Support\CollectionDetector;
+use Ikabalzam\LaravelXray\Support\ColumnExtractor;
+use Ikabalzam\LaravelXray\Support\ColumnValidator;
+use Ikabalzam\LaravelXray\Support\SchemaRegistry;
 use Illuminate\Support\Facades\File;
 
 /**

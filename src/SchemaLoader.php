@@ -1,8 +1,8 @@
 <?php
 
-namespace Ikabalzam\LaravelVision;
+namespace Ikabalzam\LaravelXray;
 
-use Ikabalzam\LaravelVision\Support\SchemaRegistry;
+use Ikabalzam\LaravelXray\Support\SchemaRegistry;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Schema;
@@ -102,7 +102,7 @@ class SchemaLoader
      */
     public function loadModelMap(SchemaRegistry $registry): void
     {
-        $modelPath = config('vision.models_path', app_path('Models'));
+        $modelPath = config('xray.models_path', app_path('Models'));
         if (! is_dir($modelPath)) {
             return;
         }

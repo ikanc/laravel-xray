@@ -1,11 +1,11 @@
 <?php
 
-namespace Ikabalzam\LaravelVision\Resolvers;
+namespace Ikabalzam\LaravelXray\Resolvers;
 
-use Ikabalzam\LaravelVision\Constants;
-use Ikabalzam\LaravelVision\Support\AstHelpers;
-use Ikabalzam\LaravelVision\Support\ResolutionResult;
-use Ikabalzam\LaravelVision\Support\SchemaRegistry;
+use Ikabalzam\LaravelXray\Constants;
+use Ikabalzam\LaravelXray\Support\AstHelpers;
+use Ikabalzam\LaravelXray\Support\ResolutionResult;
+use Ikabalzam\LaravelXray\Support\SchemaRegistry;
 use PhpParser\Node;
 use PhpParser\NodeFinder;
 
