@@ -1,0 +1,47 @@
+{
+    "name": "ikabalzam/laravel-vision",
+    "description": "Static analysis for Eloquent column references — finds invalid database column names in your Laravel code before they hit production.",
+    "keywords": ["laravel", "eloquent", "static-analysis", "database", "schema", "audit", "columns", "lint"],
+    "homepage": "https://github.com/ikanc/laravel-vision",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Ika Balzam",
+            "homepage": "https://github.com/ikanc"
+        }
+    ],
+    "require": {
+        "php": "^8.1",
+        "illuminate/console": "^10.0|^11.0|^12.0",
+        "illuminate/database": "^10.0|^11.0|^12.0",
+        "illuminate/filesystem": "^10.0|^11.0|^12.0",
+        "illuminate/support": "^10.0|^11.0|^12.0",
+        "nikic/php-parser": "^4.0|^5.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^8.0|^9.0|^10.0",
+        "phpunit/phpunit": "^10.0|^11.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Ikabalzam\\LaravelVision\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Ikabalzam\\LaravelVision\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Ikabalzam\\LaravelVision\\VisionServiceProvider"
+            ]
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
